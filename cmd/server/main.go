@@ -8,8 +8,8 @@ import (
 
 func main() {
 	s := server.Server{
-		Adress:   "localhost",
-		Port:     "3001",
+		Adress:   envoriment.GetVar("SRVADRESS"),
+		Port:     envoriment.GetVar("SRVPORT"),
 		Protocol: "tcp",
 	}
 
