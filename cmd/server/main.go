@@ -18,6 +18,7 @@ func main() {
 	d := databases.Database{}
 
 	d.Connect()
+	d.Migrate()
 	d.Disconnect()
 
 	s.Run()
