@@ -11,19 +11,19 @@ type Connection struct {
 	Adress   string
 	Port     string
 	Protocol string
-	conn     net.Conn
+	Conn     net.Conn
 }
 
 func (c *Connection) Open() error {
-	conn, err := net.Dial(c.Protocol, c.Adress+":"+c.Port)
+	Conn, err := net.Dial(c.Protocol, c.Adress+":"+c.Port)
 
-	c.conn = conn
+	c.Conn = Conn
 
 	return err
 }
 
 func (c *Connection) Close() error {
-	return c.conn.Close()
+	return c.Conn.Close()
 }
 
 func (c *Connection) Send(m messages.Message) error {
@@ -33,7 +33,7 @@ func (c *Connection) Send(m messages.Message) error {
 		return err
 	}
 
-	_, err = c.conn.Write(b)
+	_, err = c.Conn.Write(b)
 
 	return err
 }
@@ -41,7 +41,7 @@ func (c *Connection) Send(m messages.Message) error {
 func (c *Connection) Receive(buffer chan *messages.Message, berr chan error) {
 	b := make([]byte, 1024)
 
-	n, err := bufio.NewReader(c.conn).Read(b)
+	n, err := bufio.NewReader(c.Conn).Read(b)
 
 	if err != nil {
 		buffer <- nil

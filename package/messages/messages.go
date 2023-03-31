@@ -10,6 +10,8 @@ const (
 	LIST     Action = 0
 	RELAY    Action = 1
 	RESPONSE Action = 2
+	LOGIN    Action = 3
+	REGISTER Action = 4
 )
 
 type Message struct {
