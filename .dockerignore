@@ -1,0 +1,6 @@
+*.air.toml
+*.env
+*.gitignore
+LICENSE
+*.md
+Dockerfile

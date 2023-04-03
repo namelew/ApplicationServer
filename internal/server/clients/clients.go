@@ -24,7 +24,7 @@ func (c *Client) Add(d *sql.DB) error {
 }
 
 func (c *Client) Update(d *sql.DB) error {
-	ret, err := d.Exec("update clients set last_login=$2 where id=$1", c.ID, c.CreatedAt)
+	ret, err := d.Exec("update clients set last_login=$2 where id=$1", c.ID, c.LastLogin)
 
 	if err != nil {
 		return errors.New("unable to update client data. " + err.Error())
