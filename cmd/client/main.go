@@ -7,7 +7,8 @@ import (
 
 func main() {
 	c := client.Client{
-		Server: envoriment.GetVar("SRVADRESS") + ":" + envoriment.GetVar("SRVPORT"),
+		ServerAdress: envoriment.GetVar("SRVADRESS"),
+		ServerPort:   envoriment.GetVar("SRVPORT"),
 	}
 
 	c.Run()

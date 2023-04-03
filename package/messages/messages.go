@@ -12,6 +12,7 @@ const (
 	RESPONSE Action = 2
 	LOGIN    Action = 3
 	REGISTER Action = 4
+	PING     Action = 5
 )
 
 type Message struct {

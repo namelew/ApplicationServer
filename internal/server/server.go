@@ -70,6 +70,12 @@ func (s *Server) Run() {
 			case messages.RESPONSE:
 			case messages.LOGIN:
 			case messages.REGISTER:
+			case messages.PING:
+				c.Send(messages.Message{
+					Id:     2,
+					Action: messages.RESPONSE,
+					Body:   []byte("Ok"),
+				})
 			default:
 				log.Println("Unknown action")
 			}
